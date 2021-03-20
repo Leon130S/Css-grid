@@ -1,1 +1,70 @@
 /*Maak hier jouw CSS!*/
+.grid-container {
+    background-color:hsl(52, 90%, 88%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 16px;
+    column-gap: 16px;
+    grid-template-rows: 50px 190px 100px auto 50px;
+    grid-template-areas:
+            "header grote-aside grote-aside"
+            "main grote-aside grote-aside"
+            "main normale-aside kleine-aside"
+            "main normale-aside transparant"
+            "footer footer footer";
+
+}
+/*alles wat hier in staat is voor mobiel*/
+@media screen and (max-width: 576px) {
+    /*Hier schrijven we alleen properties die moeten veranderen*/
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+        grid-template-areas:
+                "header"
+                "main"
+                "grote-aside"
+                "kleine-aside"
+                "normale-aside"
+                "transparant"
+                "footer"
+
+    }
+}
+
+.grid-item {
+    padding: 10px;
+    color: white;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#grid-header{
+    background-color: #ba181b;
+    grid-area: header;
+}
+#grid-grote-aside {
+    background-color: #ba181b;
+    grid-area: grote-aside;
+}
+#grid-normale-aside {
+    background-color: #ba181b;
+    grid-area: normale-aside;
+}
+#grid-kleine-aside {
+    background-color: #ba181b;
+    grid-area: kleine-aside;
+}
+#grid-transparant {
+    background-color: transparent;
+    grid-area: transparant;
+}
+#grid-main {
+    background-color: #ba181b;
+    grid-area: main;
+}
+#grid-footer {
+    background-color: #ba181b;
+    grid-area: footer;
+}
